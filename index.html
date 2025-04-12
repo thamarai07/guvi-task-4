@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guvi Task - 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Income Expense Calculator Task</h1>
+        <div class="totals_container">
+            <div class="total_item">
+                <span>Total Income:</span>
+                <span id="total_income">0</span>
+            </div>
+            <div class="total_item">
+                <span>Total Expenses:</span>
+                <span id="total_expenses">0</span>
+            </div>
+            <div class="total_item">
+                <span>Net Balance:</span>
+                <span id="net_balance">0</span>
+            </div>
+        </div>
+        <form class="form">
+            <div>
+                <label for="name">Name of the entry</label>
+                <br>
+                <input type="text" name="name" class="name" id="name">
+                <p class="hidden error name">Please enter the name of the entry</p>
+            </div>
+            <div>
+                <label for="amount">Amount</label>
+                <br>
+                <input type="text" name="amount" class="amount" id="amount">
+                <p class="hidden error amount">Please enter the amount</p>
+            </div>
+            <div>
+                <label for="date">Date</label>
+                <br>
+                <input type="date" name="eday" class="eday" id="eday">
+                <p class="hidden error eday">Please select a date</p>
+            </div>
+            <div>
+                <label for="type">Type</label>
+                <br>
+                <select name="type" id="type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <p class="hidden error type">Please select a type</p>
+            </div>
+            <input type="hidden" class="hidden_input" name="id">
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <div class="list_container">
+            <div class="filter_container">
+                <button class="filter_btn active" data-filter="all">All</button>
+                <button class="filter_btn" data-filter="income">Income</button>
+                <button class="filter_btn" data-filter="expense">Expense</button>
+            </div>
+            <ul class="list hidden"></ul>
+            <p class="dummypara">Please Add Any Income or Expense</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
