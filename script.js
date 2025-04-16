@@ -59,10 +59,10 @@ const calculateTotals = () => {
 
 const renderList = () => {
   ul.innerHTML = "";
-  const filteredList = list.filter((item) => 
-    currentFilter === "all" || item.type === currentFilter
+  const filteredList = list.filter(
+    (item) => currentFilter === "all" || item.type === currentFilter
   );
-  
+
   if (filteredList.length > 0) {
     ul.classList.remove("hidden");
     dummypara.classList.add("hidden");
@@ -72,19 +72,19 @@ const renderList = () => {
 
       const nameSpan = document.createElement("span");
       nameSpan.className = "item_name";
-      nameSpan.textContent = `Name: {item.name}`;
+      nameSpan.textContent = `Name: ${item.name}`;
 
       const amountSpan = document.createElement("span");
       amountSpan.className = "item_amount";
-      amountSpan.textContent = `Amount: {item.amount}`;
+      amountSpan.textContent = `Amount: ${item.amount}`;
 
       const dateSpan = document.createElement("span");
       dateSpan.className = "item_date";
-      dateSpan.textContent = `Date: {item.date}`;
+      dateSpan.textContent = `Date: ${item.date}`;
 
       const typeSpan = document.createElement("span");
       typeSpan.className = "item_type";
-      typeSpan.textContent = `Type: {item.type.charAt(0).toUpperCase() + item.type.slice(1)}`;
+      typeSpan.textContent = `Type: ${item.type.charAt(0).toUpperCase() + item.type.slice(1)}`;
 
       const viewBtn = document.createElement("button");
       viewBtn.className = "view_details";
@@ -104,7 +104,15 @@ const renderList = () => {
       deleteBtn.textContent = "Delete";
       deleteBtn.dataset.id = item.id;
 
-      listItem.append(nameSpan, amountSpan, dateSpan, typeSpan, hiddenDataInput, viewBtn, deleteBtn);
+      listItem.append(
+        nameSpan,
+        amountSpan,
+        dateSpan,
+        typeSpan,
+        hiddenDataInput,
+        viewBtn,
+        deleteBtn
+      );
       ul.appendChild(listItem);
     });
   } else {
@@ -232,7 +240,7 @@ form.addEventListener("submit", (e) => {
       data.id = init;
       list.push(data);
     }
-
+    console.log(data);
     renderList();
     names.value = "";
     amount.value = "";
